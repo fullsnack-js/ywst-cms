@@ -1,17 +1,22 @@
 {
   "root": true,
-  "project": {
-    "name": "vercel-template-blog-studio"
-  },
   "api": {
-    "projectId": "YOUR_PROJECT_ID",
-    "dataset": "YOUR_DATASET_NAME"
+    "projectId": "z52vt711",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "ywst 2022"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "asset-source-unsplash",
+    "autocomplete-tags",
+    "icon-picker",
+    "iframe-pane",
+    "asset-source-ogimage"
   ],
   "env": {
     "development": {
