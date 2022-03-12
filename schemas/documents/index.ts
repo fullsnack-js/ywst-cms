@@ -6,3 +6,4 @@ export { default as person } from "./person";
 export { default as post } from "./post";
 export { default as route } from "./route";
 export { default as siteSettings } from "./site-settings";
+export { default as venue } from "./venue";

@@ -8,6 +8,7 @@ export { default as navigationItem } from "./navigation-item";
 export { default as portableText } from "./portable-text";
 export { default as questionAndAnswer } from "./question-and-answer";
 export { default as quote } from "./quote";
+export { default as schedule } from "./schedule";
 export { default as seo } from "./seo";
 export { default as simpleBlockContent } from "./simple-block";
 export { default as social } from "./social";

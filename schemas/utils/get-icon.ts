@@ -15,6 +15,7 @@ import {
   GrYoga,
   GrTextAlignCenter,
   GrSchedules,
+  GrPin,
 } from "react-icons/gr";
 import {
   IoLogoFacebook,
@@ -76,6 +77,7 @@ const IconDictionary: { [key: string]: IconType } = {
   edit: MdEdit,
   page: MdWeb,
   schedule: GrSchedules,
+  pin: GrPin,
 };
 
 export const getIcon = (type: IconKey = "default") => {

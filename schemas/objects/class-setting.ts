@@ -22,29 +22,36 @@ export default {
       layout: "dropdown",
       validation: (Rule) => Rule.required(),
     },
+
     {
-      name: "location",
-      title: "Location",
-      type: "string",
-      description:
-        "Name of the studio or yoga organization providing this class",
-      validation: (Rule) => Rule.required(),
+      name: "venue",
+      title: "Studio",
+      type: "reference",
+      to: { type: "venue" },
+      hidden: ({ parent }) => parent?.classType === "online",
     },
     {
-      name: "link",
+      name: "streaming",
+      title: "Video Streaming Platform",
+      description:
+        "The streaming platform serving the live class recording, eg. zoom",
+      type: "string",
+      hidden: ({ parent }) => parent?.role === "studio",
+    },
+    {
+      name: "registerUrl",
       type: "url",
-      title: "Link",
-      description: "Link to the event site (e.g. registration link)",
+      title: "Registration Link",
+      description: "Link to the event site (e.g. registration link/ more info)",
       validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
-    select: { title: "title", date: "date", media: "icon" },
+    select: { title: "title", media: "icon" },
     prepare(selection) {
-      const { title, date, media } = selection;
+      const { title, media } = selection;
       return {
         title: title,
-        subtitle: new Date(date).toLocaleString(),
         media: media,
       };
     },

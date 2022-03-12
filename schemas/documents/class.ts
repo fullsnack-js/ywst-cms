@@ -10,11 +10,14 @@ export default {
       title: "title",
       setting: "setting",
       level: "level",
+      schedule: "schedule",
     },
-    prepare({ title, setting, level }) {
+    prepare({ title, setting, schedule, level }) {
       return {
         title: `${title} - Level: ${level}`,
-        subtitle: `${setting.classType}`,
+        subtitle: `${setting.classType}\n ${
+          schedule ? schedule.weekday.toUpperCase() : ""
+        }`,
       };
     },
   },
@@ -41,16 +44,18 @@ export default {
         Rule.required("Must provide a short description for web viewers"),
     },
     {
-      name: "eventCalendar",
-      type: "eventCalendar",
-      validation: (Rule) =>
-        Rule.required("Must provide a calendar event that manages this class."),
+      name: "schedule",
+      type: "schedule",
     },
     {
       name: "setting",
       type: "setting",
       validation: (Rule) =>
         Rule.required("Must provide a setting for this class."),
+    },
+    {
+      name: "eventCalendar",
+      type: "eventCalendar",
     },
   ],
 };
