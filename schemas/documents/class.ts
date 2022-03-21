@@ -1,3 +1,4 @@
+import { fetchICalFromUrl } from "../../get-events";
 import { getIcon } from "../utils/get-icon";
 // import eventCalendar from "../objects/eventCalendar";
 export default {
@@ -13,11 +14,13 @@ export default {
       schedule: "schedule",
     },
     prepare({ title, setting, schedule, level }) {
+      const day = schedule.weekday
+        ? schedule.weekday.value
+        : "Please choose a day";
+      const subtitle = `${day} ${schedule.time.start}-${schedule.time.end}`;
       return {
-        title: `${title} - Level: ${level}`,
-        subtitle: `${setting.classType}\n ${
-          schedule ? schedule.weekday.toUpperCase() : ""
-        }`,
+        title: `${title}/ Level ${level} - ${setting.classType}`,
+        subtitle,
       };
     },
   },

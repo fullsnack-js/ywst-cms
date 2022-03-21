@@ -13,33 +13,48 @@ export default {
     ),
   fields: [
     // TODO: FIX to only do time, maybe change the component ?
+
     {
-      name: "from",
-      type: "datetime",
-      title: "Start",
-    },
-    {
-      name: "to",
-      type: "datetime",
-      title: "End",
-    },
-    {
+      title: "Day",
       name: "weekday",
       type: "string",
       options: {
         list: [
-          { title: "Sunday", value: "sunday" },
-          { title: "Monday", value: "monday" },
-          { title: "Tuesday", value: "tuesday" },
-          { title: "Wednesday", value: "wednesday" },
-          { title: "Thursday", value: "thursday" },
-          { title: "Friday", value: "friday" },
-          { title: "Saturday", value: "saturday" },
+          { title: "Sunday", value: "0" },
+          { title: "Monday", value: "1" },
+          { title: "Tuesday", value: "2" },
+          { title: "Wednesday", value: "3" },
+          { title: "Thursday", value: "4" },
+          { title: "Friday", value: "5" },
+          { title: "Saturday", value: "6" },
         ],
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "time",
+      title: "Time",
+      type: "timeRange",
+      of: [{ type: "timeRange" }],
+      description: "Choose start and end time of class",
+      validation: (Rule) => Rule.required(),
     },
   ],
-  options: {
-    columns: 2,
+  preview: {
+    select: {
+      time: "time",
+      day: "weekday",
+    },
+    prepare({ time, day }) {
+      const title = day
+        ? day[0].toUpperCase() + day.slice(1)
+        : "Please choose a day";
+      const subtitle = `${time.start}-${time.end}`;
+
+      return {
+        title,
+        subtitle,
+      };
+    },
   },
 };

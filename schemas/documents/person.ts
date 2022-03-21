@@ -1,7 +1,6 @@
 import { generateEmailField } from "../utils/email";
 import { authorFields } from "../fields/author-fields";
 import { getIcon } from "../utils/get-icon";
-
 export default {
   name: "person",
   title: "Person",
@@ -37,10 +36,10 @@ export default {
       title: "name",
       media: "image",
     },
-    prepare({ title = "No title", media = getIcon("personDoc") }) {
+    prepare({ title = "No title", media }) {
       return {
         title,
-        media,
+        media: media ?? getIcon("personDoc"),
       };
     },
   },

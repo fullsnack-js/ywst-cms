@@ -12,3 +12,4 @@ export { default as schedule } from "./schedule";
 export { default as seo } from "./seo";
 export { default as simpleBlockContent } from "./simple-block";
 export { default as social } from "./social";
+export { default as timeRange } from "./time-range";

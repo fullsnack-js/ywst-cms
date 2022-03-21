@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons';
 import {
   FaRegCompass as NavigationIcon,
   FaExternalLinkAlt as TargetBlankIcon,
@@ -7,7 +7,7 @@ import {
   FaImage,
   FaApple,
   FaGoogle,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 import {
   GrDocumentPdf as AttachmentIcon,
   GrBlockQuote as BlockQuoteIcon,
@@ -16,7 +16,7 @@ import {
   GrTextAlignCenter,
   GrSchedules,
   GrPin,
-} from "react-icons/gr";
+} from 'react-icons/gr';
 import {
   IoLogoFacebook,
   IoLogoInstagram,
@@ -25,7 +25,7 @@ import {
   IoShareSocial,
   IoLogoWhatsapp,
   IoLogoYoutube,
-} from "react-icons/io5";
+} from 'react-icons/io5';
 import {
   MdOutlineScreenSearchDesktop,
   MdOutlineEvent,
@@ -35,11 +35,18 @@ import {
   MdOutlinePostAdd,
   MdEdit,
   MdWeb,
-} from "react-icons/md";
-import { HelpCircleIcon } from "@sanity/icons";
-import { GoMegaphone, GoLaw } from "react-icons/go";
-import { RiPagesLine, RiLinksLine } from "react-icons/ri";
-import { FiUser } from "react-icons/fi";
+} from 'react-icons/md';
+export { ImBlog as PostIcon } from 'react-icons/im';
+export {
+  FiPenTool as BlogIcon,
+  FiArchive as AllIcon,
+  FiUser as AuthorIcon,
+  FiHash as CategoryIcon,
+} from 'react-icons/fi';
+import { HelpCircleIcon } from '@sanity/icons';
+import { GoMegaphone, GoLaw } from 'react-icons/go';
+import { RiPagesLine, RiLinksLine } from 'react-icons/ri';
+import { FiUser } from 'react-icons/fi';
 export type IconKey = keyof typeof IconDictionary;
 
 const IconDictionary: { [key: string]: IconType } = {
@@ -80,6 +87,6 @@ const IconDictionary: { [key: string]: IconType } = {
   pin: GrPin,
 };
 
-export const getIcon = (type: IconKey = "default") => {
+export const getIcon = (type: IconKey = 'default') => {
   return IconDictionary[type];
 };

@@ -16,7 +16,11 @@
     "autocomplete-tags",
     "icon-picker",
     "iframe-pane",
-    "asset-source-ogimage"
+    "asset-source-ogimage",
+    "social-preview",
+    "@sanity/production-preview",
+    "media",
+    "@sanity/orderable-document-list"
   ],
   "env": {
     "development": {
@@ -29,6 +33,14 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/desk-structure.ts"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./src/resolve-production-url.ts"
     }
   ]
 }
