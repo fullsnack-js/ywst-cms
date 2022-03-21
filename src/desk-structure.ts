@@ -6,6 +6,7 @@ import { getPreviewUrl } from './resolve-preview';
 import { HomeIcon, MenuIcon } from '@sanity/icons';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import Blog from './blog-structure';
+import { ROOT_URL } from './root-url';
 
 const defaultViews = [S.view.form()];
 export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
@@ -34,7 +35,8 @@ export const getDefaultDocumentNode = ({ schemaType, documentId }) => {
                     // || {
                     //   _ref: "",
                     // },
-                    siteUrl: getPreviewUrl(doc).replace(/\/\/$/, '/'),
+                    siteUrl: getPreviewUrl(doc),
+                    // siteUrl: getPreviewUrl(doc).replace(/\/\/$/, '/'),
                     slug: doc?.slug?.current,
                   };
                 },
