@@ -1,62 +1,62 @@
-import { getIcon } from "../utils/get-icon";
+import { getIcon } from '../utils/get-icon';
 
 export default {
-  name: "seo",
-  title: "SEO & metadata",
-  type: "object",
+  name: 'seo',
+  title: 'SEO & metadata',
+  type: 'object',
 
   options: { collapsible: true, collapsed: false },
   isHighlighted: true,
-  icon: getIcon("seo"),
+  icon: getIcon('seo'),
   fields: [
     {
-      name: "metaTitle",
-      title: "Meta Title",
-      type: "string",
+      name: 'metaTitle',
+      title: 'Meta Title',
+      type: 'string',
       validation: (Rule) =>
         Rule.max(50).warning(
-          "Longer titles may be truncated by search engines and are not recommended."
+          'Longer titles may be truncated by search engines and are not recommended.'
         ),
     },
     {
-      name: "metaDescription",
-      title: "Meta Description",
-      type: "text",
+      name: 'metaDescription',
+      title: 'Meta Description',
+      type: 'text',
       rows: 3,
       description:
-        "This ends up on summary pages, Google, whenever people share your post in social media...",
+        'This ends up on summary pages, Google, whenever people share your post in social media...',
       validation: (Rule) =>
         Rule.max(150)
-          .warning("Longer descriptions may be truncated by search engines")
+          .warning('Longer descriptions may be truncated by search engines')
           .required(),
     },
     {
-      name: "metaKeywords",
-      title: "Meta Keywords",
-      type: "tags",
-      description: "Keywords for search engines",
-      hidden: ({ parent }) => parent?._type !== "post",
+      name: 'metaKeywords',
+      title: 'Meta Keywords',
+      type: 'tags',
+      description: 'Keywords for search engines',
+      hidden: ({ parent }) => parent?._type !== 'post',
       options: {
         isHighlighted: true,
       },
     },
     {
-      name: "metaImage",
-      title: "Meta Image",
-      type: "imageWithAlt",
+      name: 'metaImage',
+      title: 'Meta Image',
+      type: 'figure',
       description:
-        "A share image will be cropped to 1200x630. This will be used as the default sharing image if any pages do not include one.",
+        'A share image will be cropped to 1200x630. This will be used as the default sharing image if any pages do not include one.',
     },
     {
-      title: "Favicon",
-      name: "favicon",
-      type: "image",
+      title: 'Favicon',
+      name: 'favicon',
+      type: 'image',
     },
   ],
   preview: {
     prepare() {
       return {
-        title: "SEO Settings",
+        title: 'SEO Settings',
       };
     },
   },

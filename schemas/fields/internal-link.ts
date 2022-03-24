@@ -23,26 +23,3 @@ export const internalLink = (referenceTypes: ReferenceType[]) => ({
     render: internalLinkRender,
   },
 });
-`"settings": *[_id == "global-settings"]{
-    footerNav[]{
-      ...,
-  navLink{
-    linkType == "internal"=> {
-          "link": internalReference->{
-      includeInSitemap
-      internalId
-      slug
-    },
-      linkType,
-},
-    linkType == "external" => {
-      linkType,
-      "link": externalLink{...,}
-    },
-  }
-    },
-    mainNav[]{...,},
-    seo->,
-    socials->,
-    title
-  }`;

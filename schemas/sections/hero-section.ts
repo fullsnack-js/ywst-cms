@@ -1,21 +1,22 @@
 export default {
-  name: "heroSection",
-  title: "Hero",
-  type: "object",
+  name: 'heroSection',
+  title: 'Hero',
+  type: 'object',
   fields: [
     {
-      title: "Title",
-      name: "title",
-      type: "string",
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Text",
-      name: "text",
-      type: "simpleBlockContent",
+      title: 'Text',
+      name: 'text',
+      type: 'simpleBlockContent',
     },
     {
-      name: "image",
-      type: "imageWithAlt",
+      name: 'image',
+      type: 'figure',
     },
   ],
 };

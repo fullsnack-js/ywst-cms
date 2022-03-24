@@ -52,14 +52,12 @@ export default (S: typeof StructureBuilder) =>
           S.documentTypeListItem('category')
             .title('Categories')
             .icon(CategoryIcon),
-          S.listItem()
-            .icon(AuthorIcon)
-            .title('Authors')
-            .child(
-              S.documentList()
-                .id('blog-authors')
-                .schemaType('person')
-                .filter('_type == "person" && role == "author"')
-            ),
+          S.listItem().icon(AuthorIcon).title('Authors').child(
+            // TODO: can filter +new in authors so will create person with role of author by default instead of showing person doc (person docs with role author selected?)
+            S.documentList()
+              .id('blog-authors')
+              .schemaType('person')
+              .filter('_type == "person" && role == "author"')
+          ),
         ])
     );
